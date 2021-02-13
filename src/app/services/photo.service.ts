@@ -1,22 +1,20 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
-import {Photo} from '../interfaces/Photo'
+import { Photo } from "../interfaces/Photo";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class PhotoService {
+  URI = "https://jsonplaceholder.typicode.com/photos";
 
-  URI = 'http://localhost:4000/api/photos';
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  createPhoto(title: string, description: string, photo: File) {
+  createPhoto(title: string, photo: File) {
     const fd = new FormData();
-    fd.append('title', title);
-    fd.append('description', description);
-    fd.append('image', photo);
+    fd.append("title", title);
+    fd.append("image", photo);
     return this.http.post(this.URI, fd);
   }
 
@@ -30,9 +28,5 @@ export class PhotoService {
 
   deletePhoto(id: string) {
     return this.http.delete(`${this.URI}/${id}`);
-  }
-
-  updatePhoto(id: string, title: string, description: string) {
-    return this.http.put(`${this.URI}/${id}`, {title, description});
   }
 }

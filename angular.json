@@ -121,6 +121,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-gallery"
+    }
+  },
+  "defaultProject": "angular-gallery",
+  "cli": {
+    "analytics": "fd426494-5184-4b7d-89e9-9c8145ffddca"
+  }
 }

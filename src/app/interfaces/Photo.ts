@@ -1,6 +1,7 @@
 export interface Photo {
-    _id?: string;
-    title: String;
-    description: String;
-    imagePath: string;
+  albumId: string;
+  id: string;
+  title: string;
+  url: string;
+  thumbnailUrl: string;
 }

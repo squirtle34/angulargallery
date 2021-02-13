@@ -1,25 +1,33 @@
 <div class="col-lg-4 mx-auto">
-    <div class="card">
-        <div class="card-header">
-            Upload a Photo
+  <div class="card">
+    <div class="card-header">Subir Foto</div>
+    <div class="card-body">
+      <form (submit)="uploadPhoto(title)">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Titulo"
+            #title
+            required
+          />
         </div>
-        <div class="card-body">
-            <form (submit)="uploadPhoto(title, description)">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Photo's Title" #title required>
-                </div>
-                <div class="form-group">
-                    <textarea rows="2" class="form-control" placeholder="Photo's Description" required #description></textarea>
-                </div>
 
-                <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
-                <img [src]="photoSelected || 'assets/no-image.png'" class="img-fluid" alt="No image"
-                    (click)="photoInput.click()">
+        <input
+          type="file"
+          class="d-none"
+          (change)="onPhotoSelected($event)"
+          #photoInput
+        />
+        <img
+          [src]="photoSelected || 'assets/no-image.png'"
+          class="img-fluid"
+          alt="No image"
+          (click)="photoInput.click()"
+        />
 
-                <button class="btn btn-primary btn-block">
-                    Upload
-                </button>
-            </form>
-        </div>
+        <button class="btn btn-primary btn-block">Subir</button>
+      </form>
     </div>
+  </div>
 </div>
