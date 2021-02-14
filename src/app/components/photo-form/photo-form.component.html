@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-header">Subir Foto</div>
     <div class="card-body">
-      <form (submit)="uploadPhoto(title)">
+      <form (submit)="uploadPhoto($event, title)">
         <div class="form-group">
           <input
             type="text"

@@ -29,7 +29,8 @@ export class PhotoFormComponent implements OnInit {
     }
   }
 
-  uploadPhoto(title: HTMLInputElement) {
+  uploadPhoto($event, title: HTMLInputElement) {
+    $event.preventDefault();
     this.photoService.createPhoto(title.value, this.file).subscribe(
       (res) => {
         console.log(res);

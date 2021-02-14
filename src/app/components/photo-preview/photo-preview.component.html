@@ -20,7 +20,10 @@
               #title
             />
           </div>
-          <button class="btn btn-danger" (click)="deletePhoto(photo.id)">
+          <button
+            class="btn btn-danger"
+            (click)="deletePhoto($event, photo.id)"
+          >
             Eliminar
           </button>
         </form>

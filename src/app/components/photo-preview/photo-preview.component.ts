@@ -31,7 +31,8 @@ export class PhotoPreviewComponent implements OnInit {
     });
   }
 
-  deletePhoto(id: string) {
+  deletePhoto($event, id: string) {
+    $event.preventDefault();
     this.photoService.deletePhoto(id).subscribe((res) => {
       console.log(res);
       this.router.navigate(["/photos"]);
